@@ -9,7 +9,7 @@ import Search from './componet/Search'
 import Cart from './componet/Cart'
 function App() {
   const[data,setData]=useState([...item])
-  const[cart,setCart]=useState(0);
+  const[cart,setCart]=useState([]);
   return (
    <>
    <BrowserRouter>
@@ -18,7 +18,7 @@ function App() {
       <Route path='/' element={<Products setCart={setCart} cart={cart} productItem={data}/>}/>
       <Route path='/products/:id' element={<ProductDetails/>}/>
       <Route path='/search/:term' element={<Search/>}/>
-      <Route path='/cart' element={<Cart/>}/>
+      <Route path='/cart' element={<Cart setCart={setCart} cart={cart} />}/>
     </Routes>
    </BrowserRouter>
    </>
